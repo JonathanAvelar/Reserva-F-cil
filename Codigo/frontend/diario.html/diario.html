@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento de Viagens</title>
+    <link rel="stylesheet" href="stylediario.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="scriptDiario.js"></script>
+    <script src="./history.js"></script>
+</head>
+<body>
+    <header>
+        <li>
+            <a href="../INICIO/dashboard.html" class="inicio" data-nav-link>INICIO</a>
+          </li>
+            
+        </div>
+        
+    </header>
+    <main>
+    
+    <div class="content">
+        <div class="coluna1">
+            <p><a href="history.html" autocapitalize="characters"class="link-history">Veja seu Histórico</a></p><br><br><br>
+            <div id="areaGrafico" class="grafico-esquerda">
+                <h1></h1><img class="divertidamente" src="../Imagens/dashboard/LOGO PEQUENA.png">
+                <canvas id="grafico"></canvas>
+            </div>
+        </div>
+        <div>
+            <div class="title">
+                
+                <h2 class="tittle">Planejamento de Viagens</h2>
+                
+                <br><br>
+            </div>
+            <div class="question">
+                <form id="formulario">
+                    <label class="quiz" for="date">Escolha a data que deseja viajar .</label>
+                    <input class="calender" type="date" id="calender" name="calender" onchange="dataEscolhida()" required>
+                    <p id="validacao"></p>
+                    <label class="quiz" for="good">Como você está se sentindo para fazer está viagem?</label>
+                    <select class="cor-azul" id="feelingsForm" name="feelingsForm" required>
+                        <option value="1">Animado 😃</option>
+                        <option value="2">Desanimado 😢</option>
+                        <option value="3">Ansioso 😟</option>
+                        <option value="4">Calmo 😌</option>
+                        <option value="7">Apaixonada 😍</option>
+                        <option value="8">Agitado 😇</option>
+                    </select>
+                    
+                    <label class="quiz" for="learn">Qual sua cidade?</label>
+                    <input class="cor-azul" type="text" id="learn" name="learn" required>
+                    <label class="quiz" for="day">Local de destino </label>
+                    <textarea class="cor-azul" id="day" name="day" cols="30" rows="8" required></textarea><br>
+                    <input type="submit" value="Enviar" onclick="salvarDados" id="submit"><br>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

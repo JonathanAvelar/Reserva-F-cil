@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="styleCadastro.css">
+    <link rel="shortcut icon" href="../Imagens/dashboard/LOGO PEQUENA.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="body-cadastro">
+    <div class="main-cadastro">
+
+        <div class="right-cadastro">
+            <div class="container-cadastro">
+            </div>
+            <a href="../DASHBOARD/index.html" class="SAIR" data-nav-link>X</a>
+            <div class="card-cadastro">
+                <h1>CADASTRAR</h1>
+                <p id="camposObrigatorios">Campos obrigatórios (*)</p>
+                <br>
+                <form id="cadastra-usuario">
+                    <div class="textfield">
+                        <label for="nome">Nome</label>
+                        <input type="text" placeholder="DIGITE SEU NOME COMPLETO" id="nome" class="required"
+                            minlength="3" maxlength="50" required>
+                        <span class="span">O nome deve possuir pelo menos 3 caracteres</span>
+                    </div>
+
+                    <div class="textfield">
+                        <label for="usuario">Usuário</label>
+                        <input type="text" placeholder="DIGITE SEU USUÁRIO *" id="usuario" class="required" required
+                            minlength="3" maxlength="15">
+                        <span class="span">O usuário deve possuir pelo menos 3 caracteres</span>
+                    </div>
+
+                    <div class="textfield">
+                        <label for="email">E-mail</label>
+                        <input type="email" placeholder="DIGITE SEU E-MAIL" id="email" class="required" maxlength="50"
+                            required>
+                        <span class="span">O e-mail deve ser válido</span>
+                    </div>
+
+                    <div class="textfield">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" placeholder="DIGITE SEU TELEFONE" id="telefone" maxlength="15" required>
+                    </div>
+                    <br>
+                    <div class="textfield">
+                        <label for="senha">Senha</label>
+                        <input type="password" placeholder="DIGITE SUA SENHA *" id="senha" class="required" o required
+                            minlength="4" maxlength="15">
+                        <span class="span">A senha deve possuir no mínimo 4 caracteres</span>
+                    </div>
+                    <br>
+                    <input class="btn-cadastro" type="submit" value="CADASTRAR">
+                    <br>
+                </form>
+            </div>
+            <div class="return-login">
+                Já tem uma conta? <a href="../Login/login.html"> LOGIN </a>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 RESERVA FÁCIL. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        var cadForm = document.getElementById("cadastra-usuario");
+        const campos = document.querySelectorAll('.required');
+        const span = document.querySelectorAll('.span');
+        const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+        cadForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Validação dos campos
+            if (validateForm()) {
+                sendFormData();
+            } else {
+                console.log('Deu merda')
+            }
+        });
+
+        function validateForm() {
+            let isValid = true;
+
+            // Validar Nome
+            if (campos[0].value.length < 3) {
+                setError(0);
+                isValid = false;
+            } else {
+                removeError(0);
+            }
+
+            // Validar Usuário
+            if (campos[1].value.length < 3) {
+                setError(1);
+                isValid = false;
+            } else {
+                removeError(1);
+            }
+
+            // Validar E-mail
+            if (!emailRegex.test(campos[2].value)) {
+                setError(2);
+                isValid = false;
+            } else {
+                removeError(2);
+            }
+
+            // Validar Senha
+            if (campos[3].value.length < 4) {
+                setError(3);
+                isValid = false;
+            } else {
+                removeError(3);
+            }
+
+            return isValid;
+        }
+
+        function setError(index) {
+            span[index].style.visibility = 'visible';
+        }
+
+        function removeError(index) {
+            span[index].style.visibility = 'hidden';
+        }
+
+         function sendFormData() {
+            var nome = document.getElementById('nome').value;
+            var usuario = document.getElementById('usuario').value;
+            var email = document.getElementById('email').value;
+            var telefone = document.getElementById('telefone').value;
+            var senha = document.getElementById('senha').value;
+
+            const userData = {
+                nome,
+                usuario,
+                email,
+                telefone,
+                senha
+            };
+
+            axios.post('http://localhost:3000/auth/register', userData)
+                .then(response => {
+                    if (response.status === 201) {
+                        alert("CADASTRADO COM SUCESSO! VOCÊ SERÁ REDIRECIONADO PARA A PÁGINA DE LOGIN");
+                        location.href = "../Login/login.html";
+                    } else {
+                        alert("Erro ao cadastrar usuário: " + response.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao enviar dados:', error);
+                    alert("Erro ao enviar dados, tente novamente.");
+                });
+        }
+
+    </script>
+
+</body>
+
+</html>

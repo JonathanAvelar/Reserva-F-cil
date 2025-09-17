@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./styleLogin.css">
+    <link rel="shortcut icon" href="../Imagens/dashboard/LOGO PEQUENA.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body class="body-login">
+    <div class="card-login">
+        <li>
+            <a href="../DASHBOARD/index.html" class="SAIR" data-nav-link>X</a>
+        </li>
+        <h1>LOGIN</h1>
+        <form onsubmit="event.preventDefault(); logar();">
+            <div class="textfield">
+                <label for="login">Usuário</label>
+                <input type="text" placeholder="Digite seu usuário ou email" id="login" required>
+            </div>
+            <div class="textfield">
+                <label for="senha">Senha</label>
+                <input type="password" placeholder="Digite sua senha" id="senha" required>
+            </div>
+            <div class="btn-container">
+                <button class="btn-login" type="submit">Entrar</button>
+            </div>
+        </form>
+        <a href="../../index.html">Recuperar Senha</a>
+        <div class="container-login">
+            <div class="sign-up">Não tem uma conta?
+                <a href="../Cadastro/Cadastro.html">Sign-Up</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© 2024 RESERVA FÁCIL. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        async function logar() {
+            const loginInput = document.getElementById('login');
+            const senhaInput = document.getElementById('senha');
+
+            const userData = {
+                usuario: loginInput.value.trim(),
+                senha: senhaInput.value.trim(),
+            };
+
+            try {
+                const response = await axios.post('http://localhost:3000/auth/login', userData);
+
+                if (response.status === 200) {
+                    alert('Login realizado com sucesso');
+                    location.href = "../INICIO/dashboard.html";
+                }
+            } catch (error) {
+                if (error.response && error.response.status === 404) {
+                    alert('Usuário não encontrado');
+                } else if (error.response && error.response.status === 401) {
+                    alert('Senha incorreta');
+                } else {
+                    console.error('Erro no login:', error);
+                    alert('Erro ao tentar realizar login. Tente novamente mais tarde.');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

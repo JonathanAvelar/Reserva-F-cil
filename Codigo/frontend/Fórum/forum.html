@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum Online</title>
+    <link rel="stylesheet" href="forum.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <script defer src="forum.js"></script>
+</head>
+
+<body>
+    
+    
+    <header>
+        <li>
+            <a href="../INICIO/dashboard.html" class="inicio" data-nav-link>INICIO</a>
+          </li>
+        <div class="buscar-box">
+            <div class="lupa-buscar" onclick="toggleSearch()">
+                <i class="bi bi-search"></i>
+            </div>
+            <div class="input-buscar">
+                <input type="text" id="search-bar" placeholder="Faça uma busca">
+            </div>
+            <div class="btn-fechar" onclick="toggleSearch()">
+                <i class="bi bi-x-circle"></i>
+            </div>
+            <button class="pesquisar" onclick="searchTopics()">Pesquisar</button>
+        </div>
+    </header>
+    <main>
+        
+        <div class="forum2">
+            <div class="new-topic">
+                <input type="text" id="topic-title" placeholder="Escreva um tópico">
+                <button onclick="addTopic()">Adicionar Tópico</button>
+         
+           </div>
+            <div class="topic-container" id="topic-container">
+                <button class="edit-topic" onclick="editTopic()">Editar</button>
+                <button class="delete-topic" onclick="deleteTopic()">Excluir</button>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
+

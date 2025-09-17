@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configurações da Conta</title>
+    <link rel="stylesheet" href="configuracao.css">
+    <script defer src="configuracao.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+    <nav class="menu-lateral">
+        <div class="btn-expandir"><br>
+            <i class="bi bi-list"></i>
+        </div>
+        <ul>
+            <li><img id="avatarImg" src="" alt="Seu Avatar">
+                <p id="avatarName"><strong>Nome do Usuário</strong></p></li>
+            <li class="itens-menu">
+                <a href="../Configuração/configuração.html">
+                    <span class="icon"><i class="bi bi-person-square"></i></span>
+                    <span class="txt-link"><strong>Conta</strong></span>
+                </a>
+            </li>
+            <li class="itens-menu">
+                <a href="../INICIO/dashboard.html">
+                    <span class="icon"><i class="bi bi-house-door-fill"></i></span>
+                    <span class="txt-link"><strong>Home</strong></span>
+                </a>
+            </li>
+            <li class="itens-menu">
+                <a href="../Exercícios/exercicios.html">
+                    <span class="icon"><i class="bi bi-clipboard-check-fill"></i></span>
+                    <span class="txt-link"><strong>Exercícios</strong></span>
+                </a>
+            </li>
+            <li class="itens-menu">
+                <a href="../diario.html/diario.html">
+                    <span class="icon"><i class="bi bi-calendar3"></i></span>
+                    <span class="txt-link"><strong>Diário</strong></span>
+                </a>
+            </li>
+            <li class="itens-menu">
+                <a href="../Fórum/forum.html">
+                    <span class="icon"><i class="bi bi-chat-square-text-fill"></i></span>
+                    <span class="txt-link"><strong>Fórum</strong></span>
+                </a>
+            </li>
+            <li class="itens-menu">
+                <a href="../../index.html">
+                    <span class="icon"><i class="bi bi-x-square-fill"></i></span>
+                    <span class="txt-link"><strong>Sair</strong></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <h1><strong>Configurações da Conta</strong></h1>
+        <div class="avatar-section">
+            <h2>Escolha seu Avatar</h2>
+            <div class="avatar-options">
+                <img src="../Imagens/Configuração/padrao.jpg" alt="Avatar 10" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/feminino-morena.svg" alt="Avatar 1" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/feminino-ruiva.jpg" alt="Avatar 2" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/feminino2.jpg" alt="Avatar 3" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/feninino-morenaClaro.jpg" alt="Avatar 4" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/profissional da saudefeminino.jpg" alt="Avatar 5" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/masculino1.jpg" alt="Avatar 6" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/masculino2.jpg" alt="Avatar 7" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/masculino3.jpg" alt="Avatar 8" class="avatar" onclick="selectAvatar(this)">
+                <img src="../Imagens/Configuração/profissional da saudemasculino.jpg" alt="Avatar 9" class="avatar" onclick="selectAvatar(this)">
+            </div>
+            <div class="selected-avatar">
+                <h3>Avatar Selecionado:</h3>
+                <img id="selectedAvatarImg" src="" alt="Avatar Selecionado">
+            </div>
+        </div>
+
+        <div class="update-section">
+            <h2>Alterar Dados</h2>
+            <form id="updateForm">
+                <label for="username">Nome de Usuário:</label>
+                <input type="text" id="username" name="username" placeholder="Digite seu nome de usuário">
+                <span id="usernameError" class="error-message"></span>
+                <button type="button" onclick="updateData()">Salvar Alterações</button>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Digite seu email">
+                <span id="emailError" class="error-message"></span>
+                
+                <button type="button" onclick="updateData()">Salvar Alterações</button>
+            </form>
+        </div>
+
+        <div class="password-section">
+            <h2>Mudar Senha</h2>
+            <form id="passwordForm">
+                <label for="currentPassword">Senha Atual:</label>
+                <input type="password" id="currentPassword" name="currentPassword" placeholder="Digite sua senha atual">
+                <span id="currentPasswordError" class="error-message"></span>
+                
+                <label for="newPassword">Nova Senha:</label>
+                <input type="password" id="newPassword" name="newPassword" placeholder="Digite sua nova senha">
+                <span id="newPasswordError" class="error-message"></span>
+                
+                <label for="confirmPassword">Confirme a Nova Senha:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua nova senha">
+                <span id="confirmPasswordError" class="error-message"></span>
+                
+                <button type="button" onclick="changePassword()">Mudar Senha</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

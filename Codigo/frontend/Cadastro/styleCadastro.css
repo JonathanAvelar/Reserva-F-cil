@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+.body-cadastro {
+    background-image: url("../Imagens/dashboard/packege-3.jpg");
+    background-color: hsla(0, 0%, 0%, 0.7);
+    background-blend-mode: overlay;
+    margin-top: 10vh;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.SAIR{  
+    color: rgb(255, 0, 0);
+    margin-left: 750PX;
+    font-size: 30PX;
+    
+    
+}
+.main-cadastro {
+    background: white;
+    max-width: 110vh;
+    height: 78vh;
+    display: flex;
+    margin-left: 350px;
+    border-radius: 5%;
+}
+/* Left */
+
+.left-cadastro {
+    background: #ffffff;
+    width: 50%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1vh;
+    margin-top: 1vh;
+    margin-left: 0.5vw;
+    border-style: solid;
+}
+
+.left-cadastro > h1 {
+    color: white;
+    margin: 0;
+    margin-top: 1vh;
+    margin-left: 3vw;
+    padding: 0px;
+}
+
+.left-cadastro > img {
+    width: 30vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+/* Right */
+
+.right-cadastro {
+    width: 100%;
+}
+
+.container-cadastro {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.return-login {
+    text-align: right;
+    margin-right: 3vw;
+    margin-top: 2%;
+}
+
+.return-login > a {
+    text-decoration: none;
+    color: #056BC9;
+    border-style: solid;
+    border-radius: 10px;
+    font-weight: 800;
+    border-width: 1px;
+    padding: 5px 4px;
+    box-sizing: border-box;
+}
+
+.return-login > a:hover {
+    background: #056BC9;
+    color: white;
+    border: #056BC9;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 1px;
+}
+
+.card-cadastro {
+    align-items: center;
+    justify-content: center;
+}
+
+.card-cadastro > h1 {
+    margin-left: 20vw;
+    font-weight: 800;
+}
+
+#camposObrigatorios {
+    margin-left: 24vw;
+    font-style: italic;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.textfield > input {
+    width: 70%;
+    border-radius: 25px;
+    padding: 10px;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: 1%;
+}
+
+.span {
+    font-size: 0.8em;
+    margin-right: auto;
+    margin-left: 20%;
+    color: red;
+    visibility: hidden;
+}
+
+.btn-cadastro {
+    width: 50%;
+    padding: 10px;
+    border-radius: 50px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color:white;
+    background: #056BC9;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-cadastro > a {
+    text-decoration: none;
+}
+
+.btn-cadastro:hover {
+    background: white;
+    color: #056BC9;
+}
+
+/*footer*/
+
+footer {
+    display: block;
+    color: white;
+}
+
+footer > p {
+    text-align: center;
+    margin-top: 1%;
+}
+
+@media only screen and (max-width:700px) {
+    .main-cadastro {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-cadastro {
+        width: auto;
+        margin-right: 0.5vw;
+    }
+
+    .left-cadastro > h1 {
+        font-size: 5vw;
+    }
+
+    .card-cadastro > h1 {
+        font-size: 5vw;
+    }
+
+    .btn-cadastro {
+        font-size: 3vw;
+    }
+
+    .right-cadastro {
+        width: auto;
+    }
+
+    .return-login {
+        font-size: 3vw;
+    }
+
+}
+

@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+.menu-lateral {
+    width: 60px;
+    height: 90%;
+    background-color: #0A6DC9;
+    padding: 35px 0 35px 1%;
+    box-shadow: 3px 0 0 #063970;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: width 0.5s;
+    margin: 1px;
+    line-height: 0.5; 
+}
+
+nav.menu-lateral.expandir {
+    width:200px;
+}
+
+.btn-expandir {
+    width: 100%;
+    padding: 10px;
+}
+
+.btn-expandir > i {
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.txt-link {
+    margin-left: 40px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li.itens-menu:hover {
+    transition: background-color 0.2s;
+}
+
+ul li.ativo {
+    background-color: #0056b3;
+}
+
+ul li.itens-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 2%;
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+
+ul li.itens-menu:hover {
+    background: #063970;
+}
+
+ul li.itens-menu {
+    transition: background-color 0.2s;
+}
+
+a {
+    color: white;
+}
+#avatarImg{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: -1px;
+}
+#avatarName{
+color: white;
+font-size: 16px;
+font-style: italic;
+font-family: 'Inria Sans';
+display: none;
+
+}
+.menu-lateral.expandido #avatarName {
+    display: inline;
+}
+
+/* Página ---- */
+body {
+    font-family: 'Inria Sans';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #8eccdf24; 
+}
+
+.container {
+    width: 90%;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+.avatar-section, .update-section, .password-section {
+    margin-bottom: 30px;
+}
+
+.avatar-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s;
+    float: left;
+    border: thin solid;
+    padding: 15px;
+    margin: 0px 20px 10px 0;
+}
+
+.avatar:hover {
+    transform: scale(1.1);
+}
+
+.selected-avatar img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin:17px;
+}

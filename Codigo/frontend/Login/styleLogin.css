@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+
+    
+    
+
+
+.body-login {
+    background-image: url("../Imagens/dashboard/img9.jpg");
+    background-color: hsla(0, 0%, 0%, 0.7);
+    background-blend-mode: overlay;
+    margin-top: 10vh;
+    padding: 0;
+    justify-content: center;
+    align-items: center;    
+}
+
+.SAIR{  
+    color: rgb(255, 0, 0);
+    margin-left: 600PX;
+    font-size: 30PX;
+    
+}
+.main-login{
+    background: white;
+    max-width: 80vh;
+    height: 70vh;
+    display: flex;
+    padding-left: 100px;
+}
+
+/*left-login*/
+
+.left-login{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-login > h1 {
+    color: #056BC9;
+    margin: 0;
+    margin-top: 7vh;
+    padding: 0;
+    font-size: 3em;
+}
+
+.left-login > p {
+    margin: 0;
+    padding: 0;
+    font-size: 1.8em;
+}
+
+.left-login > img {
+    width: 30vw;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*right-login*/
+
+.right-login {
+    width: 50vw;
+    justify-items: center;
+}
+
+.container-login {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sign-up {
+    text-align: right;
+    margin-right: 3vw;
+    margin-top: 2%;
+    font-size: 0.7em;
+}
+
+.sign-up > a {
+    text-decoration: none;
+    color: #056BC9;
+    border-style: solid;
+    border-radius: 10px;
+    font-weight: 800;
+    border-width: 1px;
+    padding: 4px 3px;
+    box-sizing: border-box;
+    font-size: 1.5em;
+}
+
+.sign-up > a:hover {
+    background: #056BC9;
+    color: white;
+    border: #056BC9;
+    border-style: solid;
+    box-sizing: border-box;
+    border-width: 1px;
+}
+
+.card-login {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: white;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-login > h1 {
+    font-weight: 800;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5px;
+}
+
+.textfield > input {
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.btn-container {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-container > input {
+    width: 35%;
+}
+
+.btn-login {
+    width: 100%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color:white;
+    background: #056BC9;
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px grey;
+}
+
+.btn-login:hover {
+    background: #05549e;
+}
+
+.card-login > a {
+    text-decoration: none;
+    color: red;
+    font-size: smaller;
+    display: block;
+    margin-left: auto;
+}
+
+.card-login > a:hover {
+    color: rgb(180, 0, 0);
+}
+
+.continuar-logado {
+    display: block;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    font-size: 0.75em;
+    text-decoration: none;
+    font-weight: 800;
+    color: #056BC9;
+}
+
+/*Footer*/
+
+footer {
+    display: block;
+    color: white;
+}
+
+footer > p {
+    text-align: center;
+    margin-top: 1%;
+}
+
+@media only screen and (max-width:700px) {
+    .main-login {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .left-login {
+        width: 97%;
+        background-color: #056BC9;
+        border-style: solid;
+        border-radius: 10px;
+        border-color: black;
+        margin-top: 0.5vh;
+        margin-left: 0.5vw;
+    }
+
+    .left-login > img {
+        display: none;
+    }
+
+
+    .right-login {
+        width: 100%;
+    }
+
+    .left-login > h1 {
+        font-size: 2.2em;
+        color: white;
+        margin-top: 0;
+    }
+
+    .left-login > {
+        font-size: 2em;
+    }
+
+    .right-login {
+        width: 100%;
+    }
+
+
+    .btn-login {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 8px 16px;
+    }
+
+    .continuar-logado {
+        display: none;
+    }
+}

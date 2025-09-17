@@ -1,0 +1,274 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inria Sans', sans-serif;
+  background-image: url("../Imagens/dashboard/hero-banner.jpg");
+    background-color: hsla(0, 0%, 97%, 1);
+    background-blend-mode: overlay;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+.icon {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.txt-link {
+  margin-left: 40px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li.itens-menu:hover {
+  transition: background-color 0.2s;
+}
+
+ul li.ativo {
+  background-color: #0056b3;
+}
+
+ul li.itens-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 2%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  line-height: 20px;
+}
+
+ul li.itens-menu:hover {
+ background-image: url("../Imagens/dashboard/popular-3.jpg");
+    background-color: hsla(0, 0%, 0%, 0.7);
+    background-blend-mode: overlay;
+}
+
+#avatarImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: -1px;
+}
+
+#avatarName {
+  color: white;
+  font-size: 16px;
+  font-style: italic;
+  display: none;
+}
+
+.menu-lateral.expandido #avatarName {
+  display: inline;
+}
+/* Cabeçalho */
+header {
+  background-image: url("../Imagens/dashboard/popular-3.jpg");
+    background-color: hsla(0, 0%, 0%, 0.7);
+    background-blend-mode: overlay;
+  color: var(--main-blue);
+  padding: 20px;
+ height: 40px;
+  width: calc(90% - 250px);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  width: 97%;
+}
+.inicio{
+  color: aliceblue;
+  
+}
+h1{
+  color: aliceblue;
+}
+header .buscar-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -20px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: flex-start;
+  align-items: baseline;
+  color:antiquewhite
+}
+header .buscar-box .lupa-buscar,
+header .buscar-box .btn-fechar {
+  cursor: pointer;
+  margin: 0 20px;
+}
+
+header .buscar-box .input-buscar input {
+  padding: 10px;
+  border: 1px solid var(--main-blue);
+  border-radius: px;
+}
+
+header .buscar-box .pesquisar {
+  padding: 10px 20px;
+  background-color: cornflowerblue;;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+header .buscar-box .pesquisar:hover {
+  background-color: var(--dark-blue);
+}
+
+.button1{
+  background: #0A6DC9;
+  padding-top: 20px;
+  color: var(--main-blue); 
+  height: 80px;
+  border: none;
+  border-radius: 5px;  
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 20%;
+  font-size: 20px;
+  padding-left: 20px;
+}
+
+/* Main */
+main {
+  flex: 1;
+  margin-left: 100px;
+  padding: 20px;
+  background-color: var(--light-blue);
+  
+}
+
+.forum2 .new-topic {
+  display: flex;
+  
+  
+ 
+}
+
+.forum2 .new-topic input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--main-blue);
+  border-radius: 5px;
+  
+}
+
+.forum2 .new-topic button {
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  border: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.forum2 .new-topic button:hover {
+  background-color: var(--dark-blue);
+}
+
+.topic-container .topic {
+  background-color: var(--white);
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.topic h3 {
+  margin-bottom: 10px;
+  color: var(--main-blue);
+}
+
+.comments-container {
+  margin-top: 20px;
+}
+
+.comment {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comment img.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment strong {
+  margin-right: 5px;
+  color: var(--main-blue);
+}
+
+.comment p {
+  margin: 0;
+  color: var(--gray);
+}
+
+button {
+  padding: 10px 20px;
+  background-color: cornflowerblue;
+  color: white;
+  border: white;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--dark-blue);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-lateral {
+      width: 100%;
+      height: auto;
+      position: relative;
+  }
+
+  .menu-lateral ul {
+      display: flex;
+      flex-direction: row;
+      overflow-x: auto;
+  }
+
+  .menu-lateral ul li {
+      flex: 1;
+      text-align: center;
+  }
+
+  header {
+      width: 100%;
+      margin-left: 0;
+  }
+
+  main {
+      margin-left: 0;
+  }
+
+  .forum2 .new-topic {
+      flex-direction: column;
+      
+  }
+
+  .forum2 .new-topic button {
+      margin-left: 0;
+      margin-top: 10px;
+  }
+}
+.logo-azul {
+  width: 20%;
+  text-align: center;
+  margin: inherit;
+}
